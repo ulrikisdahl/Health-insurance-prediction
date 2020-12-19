@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            top: 0;
+            bottom: 10;
+            background-color: #DCDCDC;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            /*margin-left: 150px;*/
+            z-index: 10;
+        }
+        .navbar ul li {
+            float: left;
+            list-style-type: none;
+            width: 100px;
+            text-align: center;
+        }
+        .navbar ul li a {
+            position: RELATIVE;
+            text-decoration: none;
+            line-height: 50px;
+            color: black;
+            display: block;
+            /*margin-left: 20px;*/
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        a:hover:not(.active):not(#reflink) {
+            background-color: grey;
+            color: gold;
+        }
+
+        body{
+            text-align: center;
+        }
+
+        .label{
+            margin-left: 20px;
+        }
+        form{
+            display: inline-block;
+            margin-top: 50px;
+            background-color: #DCDCDC;
+            padding: 20px;
+            border-radius: 5%;
+        }
+        form>p{
+            margin-top: 20px;
+        }
+        form>select{
+            margin-top: 20px;
+        }
+        .sub{
+            padding: 5px;
+        }
+
+        .result{
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        h1{
+            margin-top: 90px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div id="nav_bar" class="navbar">
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="https://github.com/Ulisman/Health-insurance-prediction">Source code</a></li>
+              <li><a href="https://github.com/Ulisman">More</a></li>
+          </div>
+    </header>
+
+    <h1>Estimate your health insurance cost</h1>
+
+    <form action="", method="post"> <!--action="/"-->
+        <p>Type in details below:</p>
+        <p>Age: <input type="number" name="age" ></p>
+        <p>BMI: <input type="number" name="bmi" ></p>
+        <p>Children: <input type="number" name="children" ></p>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+        </select>
+
+        <label class="label" for="smoking">Smoking:</label>
+        <select id="smoking" name="smoking">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+
+        <label class="label" for="region">Region:</label>
+        <select id="region" name="region">
+            <option value="rne">North East</option>
+            <option value="rnw">North West</option>
+            <option value="rse">South East</option>
+            <option value="rsw">South West</option>
+        </select>
+
+        <p><input class="sub" type="submit" value="Submit" ></p>
+    </form>
+
+    <p class="result">Health insurance price: <b>{{content}}</b></p>
+
+</body>
+
+<script src="app.js"></script>
+</html>
