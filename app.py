@@ -5,7 +5,7 @@ import pickle
 import pandas as pd
 
 
-PATH = '/Users/ulisman/Library/Mobile Documents/com~apple~CloudDocs/python copy/Data-science/AI/machine-learning/ml-projects/insurance-cost/insurance_model.pkl' #have to give an absolute path
+PATH = 'insurance_model.pkl' 
 model = pickle.load(open(PATH, 'rb'))
 
 app = Flask(__name__) #creating an insance of flask
