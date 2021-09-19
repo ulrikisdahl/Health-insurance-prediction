@@ -57,7 +57,7 @@ def home():
     return render_template('index.html')
 
 
-
+#Initializing the script
 if __name__ == "__main__":
     app.run()
 
